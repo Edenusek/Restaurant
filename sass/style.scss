@@ -150,56 +150,37 @@ body {
 		width: 250px;
 		height: 400px;
 		border-radius: 8px;
+		
 	}
 	.slider-box {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		position: relative;
 		width: 100%;
 		height: 100%;
 		transform: translateX(0);
 		transition: transform 0.5s;
+		
 	}
 
-	.first-cart,.second-cart,.third-cart {
+	.cart{
+		display: none;
+	}
+	
+	.first-cart,.second-cart ,.third-cart  {
 		display: flex;
 		justify-content: space-evenly;
-		// gap: 50px;
 		padding-top: 10px;
-		width: 100%;
-		height: 100%;
+		width: 250px;
+		height: 400px;
 		opacity: 0.8;
 		background-color: $light;
 		border-radius: 8px;
-		overflow: hidden;
-		// display: none;
+		
 	}
-	.displayNone {
-		display: none;
+	.active{
+		display: block;
 	}
-	.displayFlex {
-		display: flex;
-	}
-	// .second-cart {
-	// 	display: flex;
-	// 	justify-content: space-around;
-	// 	width: 250px;
-	// 	height: 400px;
-	// 	opacity: 0.8;
-	// 	background-color: $light;
-	// 	display: none;
-	// 	border-radius: 8px;
-	// }
-	// .third-cart {
-	// 	display: flex;
-	// 	justify-content: space-around;
-	// 	width: 250px;
-	// 	height: 400px;
-	// 	opacity: 0.8;
-	// 	background-color: $light;
-	// 	display: none;
-	// 	border-radius: 8px;
-	// }
+	
+	
 
 	.table-one,
 	.table-two,
@@ -208,16 +189,15 @@ body {
 		padding-top: 10px;
 	}
 
+
 	.btn-menu {
 		position: absolute;
-
 		top: 50%;
 		transform: translateY(-50%);
 		color: $light;
 		background-color: rgba(0, 0, 0, 0.4);
 		font-size: 2rem;
 		border: none;
-		
 	}
 	.btn-left {
 		left: 0px;
@@ -227,8 +207,7 @@ body {
 	}
 
 	.btn-menu span {
-		display: block;
-		transition: background-color .3s;
+		// display: block;
+		transition: background-color 0.3s;
 	}
-	
 }
