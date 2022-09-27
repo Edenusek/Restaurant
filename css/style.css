@@ -159,7 +159,6 @@ body {
   }
   .menus-tittle {
     margin-top: 10px;
-    text-transform: uppercase;
     font-size: 2rem;
     letter-spacing: 5px;
     color: #ffffff;
@@ -241,7 +240,92 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 10px;
+    padding-top: 100px;
     font-size: 2rem;
+  }
+  .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 30px;
+  }
+  .date,
+.persons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 1rem;
+    padding: 5%;
+  }
+  .reserv-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 20px;
+  }
+  .reservation-btn {
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+  }
+  .reservation-btn:focus {
+    color: #ffffff;
+    background-color: #171717;
+  }
+  .reservation-error {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: tomato;
+  }
+  .reservation-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 30px 0;
+  }
+  .reserv-info-date, .reserv-info-time {
+    padding: 3px 0;
+    color: #F0FFFF;
+    font-size: 1rem;
+  }
+  .requirements {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */

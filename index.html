@@ -51,56 +51,56 @@
     </section>
     <section id="menus" class="menus">
         <div class="menus-site">
-            
+
             <div class="slider">
-                <h1 class="menus-tittle">menu</h1>
+                <h1 class="menus-tittle">Menu</h1>
                 <div class="slider-box">
                     <div class="cart active">
-                    <div class="first-cart  ">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="table-one">Pizza</th>
-                                    <th>Cena</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <th class="table-one">Margherita</th>
-                                <th>23 zł</th>
-                            </tbody>
-                            <tbody>
-                                <th class="table-one">Funghi</th>
-                                <th>23 zł</th>
-                            </tbody>
-                            <tbody>
-                                <th class="table-one">Vegetariana</th>
-                                <th>23 zł</th>
-                            </tbody>
-                            <tbody>
-                                <th class="table-one">Hawaii</th>
-                                <th>23 zł</th>
-                            </tbody>
-                            <tbody>
-                                <th class="table-one">Bolognese</th>
-                                <th>23 zł</th>
-                            </tbody>
-                            <tbody>
-                                <th class="table-one">Salami</th>
-                                <th>23 zł</th>
-                            </tbody>
-                            <tbody>
-                                <th class="table-one">Capricciosa</th>
-                                <th>23 zł</th>
-                            </tbody>
-                        </table>
-                        
+                        <div class="first-cart  ">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="table-one">Pizza</th>
+                                        <th>Cena</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <th class="table-one">Margherita</th>
+                                    <th>23 zł</th>
+                                </tbody>
+                                <tbody>
+                                    <th class="table-one">Funghi</th>
+                                    <th>23 zł</th>
+                                </tbody>
+                                <tbody>
+                                    <th class="table-one">Vegetariana</th>
+                                    <th>23 zł</th>
+                                </tbody>
+                                <tbody>
+                                    <th class="table-one">Hawaii</th>
+                                    <th>23 zł</th>
+                                </tbody>
+                                <tbody>
+                                    <th class="table-one">Bolognese</th>
+                                    <th>23 zł</th>
+                                </tbody>
+                                <tbody>
+                                    <th class="table-one">Salami</th>
+                                    <th>23 zł</th>
+                                </tbody>
+                                <tbody>
+                                    <th class="table-one">Capricciosa</th>
+                                    <th>23 zł</th>
+                                </tbody>
+                            </table>
+
+                        </div>
                     </div>
-                </div>
 
 
 
-                <div class="cart">
-                    <div class="second-cart  ">
+                    <div class="cart">
+                        <div class="second-cart  ">
                             <table>
                                 <thead>
                                     <tr>
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     <div class="cart">
-                    <div class="third-cart  ">
+                        <div class="third-cart  ">
                             <table>
                                 <thead>
                                     <tr>
@@ -195,6 +195,37 @@
     <section id="reservation">
         <div class="reservation">
             <h1 class="reservation-tittle">Rezerwacja</h1>
+            <div class="form">
+                <div class="date">
+                    <label for="">Data:</label>
+                    <input type="date"  id="date">
+                    <input type="time" id="time">
+                </div>
+                <div class="persons">
+                    <label for="">Ilość osób:</label>
+                    <select id="persons" name="persons">
+                        <option value="0" selected disabled>Wybierz ilość osób</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+
+            <span class="reservation-error"></span>
+        <div class="reserv-btn">
+            <button class="reservation-btn">Zarezerwuj</button>
+        </div>
+        <div class="reservation-info">
+            <span class="reserv-info-date"></span>
+            <span class="reserv-info-time"></span>
+        </div>
+            <div class="requirements">
+                <span >Rezerwacji można dokonać minimun 2 godziny wcześniej. Przyjmujemy rezerwację
+                    również pod numerem telefonu 888-888-888</span>
+            </div>
         </div>
     </section>
 

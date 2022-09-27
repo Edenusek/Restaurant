@@ -8,7 +8,8 @@ const leftArrow = document.querySelector(".left-arrow");
 const rightArrow = document.querySelector(".right-arrow");
 const btnMenu = document.querySelector(".btn-menu");
 const menuCart = document.querySelectorAll(".cart");
-const index = -1;
+
+const reservationBtn = document.querySelector(".reservation-btn");
 
 const showMobileMenu = () => {
 	menu.classList.toggle("hide");
@@ -58,8 +59,26 @@ const handleLeftArrow = () => {
 	rightArrow.style.color = "#ffffff";
 };
 
+const reservation = () => {
+
+	const dateInput = document.getElementById("#date").value;
+	const timeInpute = document.getElementById("#time");
+	const personsSelected = document.getElementById("#persons");
+	const reservationDate = document.querySelector(".reserv-info-date");
+	const reservationTime = document.querySelector(".reserv-info-time");
+	const reservationError = document.querySelector(".reservation-error");
+
+	if(dateInput.inpute == "" || timeInpute.inpute == "" || personsSelected.value == "" || selectedIndex == 0){
+		reservationError.innerHTML = "Musisz wypełnić wszystkie pola"
+	}else {
+	reservationDate.innerHTML = `Zarezerwowałeś stolik dla ${personsSelected} osób,dnia ${dateInput.value}`;
+	reservationTime.innerHTML = `Na godzinę ${timeInpute.value}`;
+	}
+	console.log("klik");
+};
+
 mobilNav.addEventListener("click", showMobileMenu);
 btnRight.addEventListener("click", handleRightArrow);
 btnLeft.addEventListener("click", handleLeftArrow);
-
+reservationBtn.addEventListener("click", reservation);
 hideMobileMenu();
