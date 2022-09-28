@@ -61,20 +61,28 @@ const handleLeftArrow = () => {
 
 const reservation = () => {
 
-	const dateInput = document.getElementById("#date").value;
-	const timeInpute = document.getElementById("#time");
-	const personsSelected = document.getElementById("#persons");
+	const dateInput = document.getElementById("date");
+	const timeInpute = document.getElementById("time");
+	const personsSelected = document.getElementById("persons");
 	const reservationDate = document.querySelector(".reserv-info-date");
 	const reservationTime = document.querySelector(".reserv-info-time");
 	const reservationError = document.querySelector(".reservation-error");
+	
+	dateInput.inpute = new Date();
+	
+	
 
-	if(dateInput.inpute == "" || timeInpute.inpute == "" || personsSelected.value == "" || selectedIndex == 0){
-		reservationError.innerHTML = "Musisz wypełnić wszystkie pola"
+	if(dateInput.value == "" || timeInpute.value == "" || personsSelected.value == "" || personsSelected.selectedIndex == 0){
+
+		reservationError.textContent = "Musisz wypełnić wszystkie pola"
+
 	}else {
-	reservationDate.innerHTML = `Zarezerwowałeś stolik dla ${personsSelected} osób,dnia ${dateInput.value}`;
-	reservationTime.innerHTML = `Na godzinę ${timeInpute.value}`;
+
+	reservationDate.textContent = `Zarezerwowałeś stolik dla ${personsSelected.value} osób,dnia ${dateInput.value}`;
+	reservationTime.textContent = `Na godzinę ${timeInpute.value}`;
+	reservationError.textContent = ""
 	}
-	console.log("klik");
+	
 };
 
 mobilNav.addEventListener("click", showMobileMenu);
@@ -82,3 +90,4 @@ btnRight.addEventListener("click", handleRightArrow);
 btnLeft.addEventListener("click", handleLeftArrow);
 reservationBtn.addEventListener("click", reservation);
 hideMobileMenu();
+
