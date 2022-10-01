@@ -67,10 +67,7 @@ const reservation = () => {
 	const reservationDate = document.querySelector(".reserv-info-date");
 	const reservationTime = document.querySelector(".reserv-info-time");
 	const reservationError = document.querySelector(".reservation-error");
-	
-	dateInput.inpute = new Date();
-	
-	
+		
 
 	if(dateInput.value == "" || timeInpute.value == "" || personsSelected.value == "" || personsSelected.selectedIndex == 0){
 

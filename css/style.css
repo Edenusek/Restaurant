@@ -254,7 +254,7 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding-top: 30px;
+    padding-top: 80px;
   }
   .date,
 .persons {
@@ -265,7 +265,19 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     font-size: 1rem;
-    padding: 5%;
+    padding: 30px;
+  }
+  .reserv-label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-right: 5px;
   }
   .reserv-btn {
     display: -webkit-box;
@@ -293,7 +305,8 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    color: tomato;
+    font-size: 1rem;
+    color: #a8eb12;
   }
   .reservation-info {
     display: -webkit-box;
@@ -314,18 +327,155 @@ body {
             align-items: center;
     padding: 30px 0;
   }
-  .reserv-info-date, .reserv-info-time {
+  .reserv-info-date,
+.reserv-info-time {
     padding: 3px 0;
-    color: #F0FFFF;
+    color: #f0ffff;
     font-size: 1rem;
   }
   .requirements {
+    width: 100vw;
+    height: 3.125rem;
+    padding-top: 4.375rem;
+    margin-left: 1.25rem;
+    font-size: 1rem;
+  }
+  #orders {
+    width: 100vw;
+    height: 700px;
+    background-color: #79c2d0;
+  }
+  .orders-tittle {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 20px;
+    font-size: 2rem;
+  }
+  .orders {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px;
+  }
+  .orders-selects-error {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: tomato;
     font-size: 1rem;
+  }
+  .orders-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 5px;
+  }
+  .orders-add-btn {
+    background-color: transparent;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  .basket-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10px;
+    width: 100vw;
+    height: 70vh;
+  }
+  .basket {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 90%;
+    height: 90%;
+    background-color: #9fd3c7;
+    -webkit-box-shadow: 5px 7px 5px #53a8b6;
+            box-shadow: 5px 7px 5px #53a8b6;
+    overflow: hidden;
+  }
+  .dish,
+.price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 0.8rem;
+  }
+  .dish {
+    width: 70%;
+    height: 100%;
+  }
+  .price {
+    width: 30%;
+    height: 100%;
+  }
+  .count {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 10%;
+    width: 90%;
+    background-color: #9fd3c7;
+    -webkit-box-shadow: 5px 7px 5px #53a8b6;
+            box-shadow: 5px 7px 5px #53a8b6;
+  }
+  .end-price-text, .end-price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 0.8rem;
+  }
+  .end-price-text {
+    width: 70%;
+    height: 100%;
+  }
+  .end-price {
+    width: 30%;
+    height: 100%;
+    color: tomato;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -41,7 +41,7 @@
                     <li class="menu__item"><a href="#home">Home</a></li>
                     <li class="menu__item"><a href="#menus">Menu</a></li>
                     <li class="menu__item"><a href="#reservation">rezerwacja</a></li>
-                    <li class="menu__item"><a href="#order">zamówienia</a></li>
+                    <li class="menu__item"><a href="#orders">zamówienia</a></li>
                     <li class="menu__item"><a href="#contact">kontakt</a></li>
                 </ul>
             </div>
@@ -197,12 +197,12 @@
             <h1 class="reservation-tittle">Rezerwacja</h1>
             <div class="form">
                 <div class="date">
-                    <label for="">Data:</label>
-                    <input type="date"  id="date"  >
+                    <label for="" class="reserv-label">Data:</label>
+                    <input type="date" id="date">
                     <input type="time" id="time">
                 </div>
                 <div class="persons">
-                    <label for="">Ilość osób:</label>
+                    <label for="" class="reserv-label">Ilość osób:</label>
                     <select id="persons" name="persons">
                         <option value="0" selected disabled>Wybierz ilość osób</option>
                         <option value="1">1</option>
@@ -215,17 +215,81 @@
             </div>
 
             <span class="reservation-error"></span>
-        <div class="reserv-btn">
-            <button class="reservation-btn">Zarezerwuj</button>
-        </div>
-        <div class="reservation-info">
-            <span class="reserv-info-date"></span>
-            <span class="reserv-info-time"></span>
-        </div>
+            <div class="reserv-btn">
+                <button class="reservation-btn">Zarezerwuj</button>
+            </div>
+            <div class="reservation-info">
+                <span class="reserv-info-date"></span>
+                <span class="reserv-info-time"></span>
+            </div>
             <div class="requirements">
-                <span >Rezerwacji można dokonać minimun 2 godziny wcześniej. Przyjmujemy rezerwację
+                <span>Rezerwacji można dokonać minimun 2 godziny wcześniej. Przyjmujemy rezerwację
                     również pod numerem telefonu 888-888-888</span>
             </div>
+        </div>
+    </section>
+
+    <section id="orders">
+        <span class="orders-tittle">Zamówienia</span>
+        <div class="orders">
+            <select name="pizza" id="pizza">
+                <option value="" selected disabled>Pizza</option>
+                <option value="">Margherita</option>
+                <option value="">Funghi</option>
+                <option value="">Vegetariana</option>
+                <option value="">Hawaii</option>
+                <option value="">Bolognese</option>
+            </select>
+            <select name="pasta" id="pasta">
+                <option value="" selected disabled>Makarony</option>
+                <option value="">Spaghetti bolognese</option>
+                <option value="">Spaghetti carbonara</option>
+                <option value="">Cannelloni spinaci</option>
+                <option value="">Lasagne alla bolognese</option>
+                <option value="">Penne all forno</option>
+            </select>
+            <select name="desserts" id="desserts">
+                <option value="" selected disabled>Desery</option>
+                <option value="">Beza migdałowa</option>
+                <option value="">Sernik</option>
+                <option value="">Truskawki w koglu moglu</option>
+                <option value="">Jabłecznik</option>
+                <option value="">Lody</option>
+            </select>
+
+        </div>
+        <div class="orders-selects-error">Musisz wybrać zamówenie</div>
+        <div class="orders-btn">
+            <button class="orders-add-btn">Dodaj</button>
+        </div>
+
+        <div class="basket-box">
+            <div class="basket">
+                <div class="dish"><span>margherita</span>
+                    <span>Spaghetti</span>
+                    <span>krokiet</span>
+                    <span>jabłęcznik</span>
+                    <span>lody</span>
+                    <span>lody</span>
+                    <span>lody</span>
+                    <span>lody</span>
+                    <span>lody</span>
+                </div>
+                <div class="price"><span>23 zł</span>
+                    <span>50 zł</span>
+                    <span>35 zł</span>
+                    <span>27 zł</span>
+                    <span>15 zł</span>
+                    <span>15 zł</span>
+                    <span>15 zł</span>
+                </div>
+
+            </div>
+            <div class="count">
+                <div class="end-price-text">Łączna kwota zamówenia:</div>
+                <div class="end-price">100 zł</div>
+            </div>
+
         </div>
     </section>
 
