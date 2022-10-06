@@ -12,16 +12,35 @@ body {
 
 @media (max-width: 460px) {
   .navi {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: fixed;
+    top: 0;
     width: 100vw;
     height: 40px;
+    background-color: black;
+    z-index: 100;
+  }
+  .name {
+    padding-right: 20px;
+    color: #ffffff;
+    font-size: 1rem;
   }
   .tittle {
     position: relative;
     width: 100px;
     height: 20px;
+    top: 80px;
     left: 150px;
-    font-size: 2.5em;
-    color: black;
+    font-size: 3em;
+    color: #fcffc1;
   }
   .tittle .tittle__two {
     position: absolute;
@@ -33,11 +52,11 @@ body {
   }
   .hi-board {
     position: relative;
-    top: 150px;
+    top: 250px;
     left: 70px;
-    font-size: 1.8em;
+    font-size: 2em;
     font-weight: bold;
-    color: black;
+    color: #fcffc1;
   }
   .mobil-nav {
     padding: 10px;
@@ -81,7 +100,7 @@ body {
 .line-three {
     width: 100%;
     height: 3px;
-    background-color: #171717;
+    background-color: #ffffff;
     position: absolute;
   }
   .line-two {
@@ -128,18 +147,20 @@ body {
     transition: transform 0.3s;
     transition: transform 0.3s, -webkit-transform 0.3s;
   }
+  #home,
+#menus,
+#reservation,
+#orders,
+#contact {
+    max-width: 460px;
+    height: 100vh;
+    overflow: hidden;
+  }
   #home {
-    width: 100%;
-    height: 700px;
     background-image: url("/img/restaurant-small.jpg");
     background-position: center;
-    background-size: 100% 100%;
+    background-size: 100vw 100vh;
     background-repeat: no-repeat;
-  }
-  #menus {
-    width: 100%;
-    height: 700px;
-    overflow: hidden;
   }
   .menus-site {
     display: -webkit-box;
@@ -223,12 +244,7 @@ body {
     transition: background-color 0.3s;
   }
   #reservation {
-    width: 100vw;
-    height: 700px;
-    overflow: hidden;
-    background-color: rgb(89, 231, 252);
-    background-image: -webkit-gradient(linear, left top, right top, from(rgb(89, 231, 252)), to(rgba(41, 86, 75, 0.88)));
-    background-image: linear-gradient(90deg, rgb(89, 231, 252) 0%, rgba(41, 86, 75, 0.88) 100%);
+    background-color: #fcffc1;
   }
   .reservation-tittle {
     display: -webkit-box;
@@ -240,7 +256,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 100px;
+    padding-top: 50px;
     font-size: 2rem;
   }
   .form {
@@ -255,6 +271,12 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     padding-top: 80px;
+  }
+  #date,
+#persons,
+#time {
+    border-radius: 5px;
+    border: 1px solid black;
   }
   .date,
 .persons {
@@ -293,6 +315,7 @@ body {
     border: 1px solid black;
     border-radius: 5px;
     padding: 2px;
+    background-color: transparent;
   }
   .reservation-btn:focus {
     color: #ffffff;
@@ -341,8 +364,6 @@ body {
     font-size: 1rem;
   }
   #orders {
-    width: 100vw;
-    height: 700px;
     background-color: #79c2d0;
   }
   .orders-tittle {
@@ -366,7 +387,9 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    max-width: 90%;
     padding: 10px;
+    margin: 0 auto;
   }
   .orders-selects-error {
     display: -webkit-box;
@@ -408,28 +431,36 @@ body {
         -ms-flex-align: center;
             align-items: center;
     padding: 10px;
+    padding-top: 40px;
     width: 100vw;
-    height: 70vh;
+    height: 55vh;
   }
   .basket {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 90%;
-    height: 90%;
+    min-width: 90%;
+    min-height: 30%;
+    max-height: 90%;
     background-color: #9fd3c7;
     -webkit-box-shadow: 5px 7px 5px #53a8b6;
             box-shadow: 5px 7px 5px #53a8b6;
     overflow: hidden;
   }
-  .dish,
-.price {
+  .order {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    padding-top: 10px;
+    width: 100%;
+    height: 30px;
+  }
+  .dish,
+.price,
+.delete-btn-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -437,15 +468,36 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-top: 5px;
     font-size: 0.8rem;
   }
   .dish {
-    width: 70%;
+    width: 50%;
     height: 100%;
   }
   .price {
-    width: 30%;
+    width: 35%;
     height: 100%;
+  }
+  .delete-btn-box {
+    width: 15%;
+    height: 100%;
+  }
+  .delete-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid black;
   }
   .count {
     display: -webkit-box;
@@ -457,7 +509,8 @@ body {
     -webkit-box-shadow: 5px 7px 5px #53a8b6;
             box-shadow: 5px 7px 5px #53a8b6;
   }
-  .end-price-text, .end-price {
+  .end-price-text,
+.end-price {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -476,6 +529,98 @@ body {
   .end-price {
     width: 30%;
     height: 100%;
-    color: tomato;
+    color: royalblue;
+    font-size: 1rem;
+  }
+  .order-btn-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100vh;
+    padding-top: 30px;
+  }
+  .order-btn-confirm {
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: transparent;
+    font-size: 1rem;
+  }
+  #contact {
+    background-image: url(/img/cafe-small.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .contact-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 80%;
+  }
+  .contact-tittle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 10px;
+    font-size: 2rem;
+    color: #ffffff;
+  }
+  .contact1,
+.contact2,
+.contact3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 20px;
+    gap: 5px;
+    width: 70%;
+    height: 30%;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: #ececec;
+    opacity: 0.8;
+  }
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 11%;
+    background-color: #171717;
+    color: #ffffff;
   }
 }/*# sourceMappingURL=style.css.map */

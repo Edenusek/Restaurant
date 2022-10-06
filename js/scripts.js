@@ -11,6 +11,9 @@ const menuCart = document.querySelectorAll(".cart");
 
 const reservationBtn = document.querySelector(".reservation-btn");
 
+const ordersAddBtn = document.querySelector(".orders-add-btn");
+const orderBtnConfirm = document.querySelector(".order-btn-confirm");
+
 const showMobileMenu = () => {
 	menu.classList.toggle("hide");
 	mobilNav.classList.toggle("mobil-nav-active");
@@ -60,31 +63,42 @@ const handleLeftArrow = () => {
 };
 
 const reservation = () => {
-
 	const dateInput = document.getElementById("date");
 	const timeInpute = document.getElementById("time");
 	const personsSelected = document.getElementById("persons");
 	const reservationDate = document.querySelector(".reserv-info-date");
 	const reservationTime = document.querySelector(".reserv-info-time");
 	const reservationError = document.querySelector(".reservation-error");
-		
 
-	if(dateInput.value == "" || timeInpute.value == "" || personsSelected.value == "" || personsSelected.selectedIndex == 0){
-
-		reservationError.textContent = "Musisz wypełnić wszystkie pola"
-
-	}else {
-
-	reservationDate.textContent = `Zarezerwowałeś stolik dla ${personsSelected.value} osób,dnia ${dateInput.value}`;
-	reservationTime.textContent = `Na godzinę ${timeInpute.value}`;
-	reservationError.textContent = ""
+	if (
+		dateInput.value == "" ||
+		timeInpute.value == "" ||
+		personsSelected.value == "" ||
+		personsSelected.selectedIndex == 0
+	) {
+		reservationError.textContent = "Musisz wypełnić wszystkie pola";
+	} else {
+		reservationDate.textContent = `Zarezerwowałeś stolik dla ${personsSelected.value} osób,dnia ${dateInput.value}`;
+		reservationTime.textContent = `Na godzinę ${timeInpute.value}`;
+		reservationError.textContent = "";
 	}
-	
+};
+
+const order = () => {
+	ordersAddBtn.style.backgroundColor = "black";
+	ordersAddBtn.style.color = "white";
+};
+
+const confirmOrders = () => {
+	orderBtnConfirm.style.backgroundColor = "black";
+	orderBtnConfirm.style.color = "white";
 };
 
 mobilNav.addEventListener("click", showMobileMenu);
 btnRight.addEventListener("click", handleRightArrow);
 btnLeft.addEventListener("click", handleLeftArrow);
 reservationBtn.addEventListener("click", reservation);
-hideMobileMenu();
+ordersAddBtn.addEventListener("click", order);
+orderBtnConfirm.addEventListener("click", confirmOrders);
 
+hideMobileMenu();
