@@ -13,6 +13,15 @@ const reservationBtn = document.querySelector(".reservation-btn");
 
 const ordersAddBtn = document.querySelector(".orders-add-btn");
 const orderBtnConfirm = document.querySelector(".order-btn-confirm");
+const ordersPrice = document.querySelector(".orders-price");
+
+const inputOrder = document.getElementById("orders-menu");
+const ordersError = document.querySelector(".orders-selects-error");
+const endPrice = document.querySelector(".end-price");
+
+let ID = 0;
+
+let moneyArr = [0];
 
 const showMobileMenu = () => {
 	menu.classList.toggle("hide");
@@ -84,6 +93,21 @@ const reservation = () => {
 	}
 };
 
+const disabledPastDate = () => {
+	const today = new Date().toISOString().split("T")[0];
+	const dateToDisabled = document.getElementsByName("date")[0];
+	dateToDisabled.setAttribute("min", today);
+};
+
+// ustawienia zegrarka z możliwością wyboru godziny tylko 2 h do przodu//
+
+const reservationTime = () => {
+	const timeBlock = document.getElementsByName("time")[0];
+	timeBlock.setAttribute("min"(actualTime + 2));
+	const actualTime = new Date().toISOString().getHours();
+	console.log(actualTime);
+};
+
 const order = () => {
 	ordersAddBtn.style.backgroundColor = "black";
 	ordersAddBtn.style.color = "white";
@@ -94,11 +118,66 @@ const confirmOrders = () => {
 	orderBtnConfirm.style.color = "white";
 };
 
+const footerDate = () => {
+	const footerYear = document.querySelector(".year");
+	const date = new Date();
+	footerYear.textContent = date.getFullYear();
+};
+
+const checkOrdersError = () => {
+	if (inputOrder.selectedIndex === 0) {
+		ordersError.textContent = "Musisz wybrać zamówenie";
+	}
+};
+
+const addToBasked = () => {
+	const ordersName = document.querySelector(".orders-name");
+	const ordersPrice = document.querySelector(".orders-price");
+	const basket = document.querySelector(".basket");
+	const newOrder = document.createElement("div");
+	newOrder.setAttribute("id", ID);
+const number = parseFloat(inputOrder.value)
+	console.log(number);
+
+	checkOrdersError();
+
+	newOrder.innerHTML = `
+	<div class="order">
+                    <div class="dish">
+                        <span>${inputOrder.value}</span>
+                    </div>
+
+                    <div class="price">
+                        <span>${parseFloat(inputOrder.value)}</span>
+                    </div>
+
+                    <div class="delete-btn-box">
+                        <button class="delete-btn" onclick="deleteDish(${ID})"><i class="fa-solid fa-x"></i></button>
+                    </div>
+                </div>
+	`;
+
+	basket.appendChild(newOrder);
+	moneyArr.push(parseFloat(inputOrder.value));
+	count(moneyArr);
+
+	ID++;
+};
+
+const count = money => {
+	const newMoney = money.reduce((a, b) => a + b);
+	endPrice.textContent = `${newMoney} zł`;
+};
+
+const deleteDish = () => {};
+
 mobilNav.addEventListener("click", showMobileMenu);
 btnRight.addEventListener("click", handleRightArrow);
 btnLeft.addEventListener("click", handleLeftArrow);
 reservationBtn.addEventListener("click", reservation);
-ordersAddBtn.addEventListener("click", order);
+ordersAddBtn.addEventListener("click", addToBasked);
 orderBtnConfirm.addEventListener("click", confirmOrders);
 
 hideMobileMenu();
+disabledPastDate();
+footerDate();

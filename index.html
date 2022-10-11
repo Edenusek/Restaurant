@@ -199,8 +199,8 @@
             <div class="form">
                 <div class="date">
                     <label for="" class="reserv-label">Data:</label>
-                    <input type="date" id="date">
-                    <input type="time" id="time">
+                    <input name="date" type="date" id="date" min="">
+                    <input name="time "type="time" id="time" min="">
                 </div>
                 <div class="persons">
                     <label for="" class="reserv-label">Ilość osób:</label>
@@ -225,7 +225,8 @@
             </div>
             <div class="requirements">
                 <span>Rezerwacji można dokonać minimun 2 godziny wcześniej. Przyjmujemy rezerwację
-                    również pod numerem telefonu 888-888-888</span>
+                    również pod numerem telefonu </span>
+                    <span class="phone-number">888-888-888</span>
             </div>
         </div>
     </section>
@@ -233,33 +234,31 @@
     <section id="orders">
         <span class="orders-tittle">Zamówienia</span>
         <div class="orders">
-            <select name="pizza" id="pizza">
-                <option value="" selected disabled>Pizza</option>
-                <option value="">Margherita</option>
-                <option value="">Funghi</option>
-                <option value="">Vegetariana</option>
-                <option value="">Hawaii</option>
-                <option value="">Bolognese</option>
+            <select name="orders-menu" id="orders-menu">
+                <option value="" selected disabled>Wybierz danie</option>
+                <option value="" disabled>Pizza</option>
+                <option value='Margherita 32 zł'><span class="orders-name">Margherita</span> <span class="orders-price">32 zł</span></option>
+                <option value="Funghi 32 zł"><span class="orders-name">Funghi</span>  <span class="orders-price">32 zł</option>
+                <option value="Vegetariana 32 zł"><span class="orders-name">Vegetariana</span>  <span class="orders-price">32 zł</option>
+                <option value="Hawaii 32 zł"><span class="orders-name">Hawaii</span>  <span class="orders-price">32 zł</option>
+                <option value="Bolognese 32 zł"><span class="orders-name">Bolognese</span>  <span class="orders-price">32 zł</option>
+                <option value="" disabled>Makarony</option>
+                <option value="Spaghetti bolognese 32 zł"><span class="orders-name">Spaghetti bolognese</span>  <span class="orders-price">32 zł</option>
+                <option value="Spaghetti carbonara 32 zł"><span class="orders-name">Spaghetti carbonara</span>  <span class="orders-price">32 zł</option>
+                <option value="Cannelloni spinaci 32 zł"><span class="orders-name">Cannelloni spinaci</span>  <span class="orders-price">32 zł</option>
+                <option value="Lasagne alla bolognese 32 zł"><span class="orders-name">Lasagne alla bolognese</span>  <span class="orders-price">32 zł</option>
+                <option value="Penne all forno 32 zł"><span class="orders-name">Penne all forno</span>  <span class="orders-price">32 zł</option>
+                <option value="" disabled>Desery</option>
+                <option value="Beza migdałowa 32 zł"><span class="orders-name">Beza migdałowa</span>  <span class="orders-price">32 zł</option>
+                <option value="Sernik 32 zł"><span class="orders-name">Sernik</span>  <span class="orders-price">32 zł</option>
+                <option value="Truskawki w koglu moglu 32 zł"><span class="orders-name">Truskawki w koglu moglu</span>  <span class="orders-price">32 zł</option>
+                <option value="Jabłecznik"><span class="orders-name">Jabłecznik </span> <span class="orders-price">32 zł</option>
+                <option value="Lody"><span class="orders-name">Lody</span>  <span class="orders-price">32 zł</option>
             </select>
-            <select name="pasta" id="pasta">
-                <option value="" selected disabled>Makarony</option>
-                <option value="">Spaghetti bolognese</option>
-                <option value="">Spaghetti carbonara</option>
-                <option value="">Cannelloni spinaci</option>
-                <option value="">Lasagne alla bolognese</option>
-                <option value="">Penne all forno</option>
-            </select>
-            <select name="desserts" id="desserts">
-                <option value="" selected disabled>Desery</option>
-                <option value="">Beza migdałowa</option>
-                <option value="">Sernik</option>
-                <option value="">Truskawki w koglu moglu</option>
-                <option value="">Jabłecznik</option>
-                <option value="">Lody</option>
-            </select>
+           
 
         </div>
-        <div class="orders-selects-error">Musisz wybrać zamówenie</div>
+        <div class="orders-selects-error"></div>
         <div class="orders-btn">
             <button class="orders-add-btn">Dodaj</button>
         </div>
@@ -267,7 +266,7 @@
         <div class="basket-box">
             <div class="basket">
 
-                <div class="order">
+                <!-- <div class="order">
                     <div class="dish">
                         <span>margherita</span>
                     </div>
@@ -277,7 +276,7 @@
                     </div>
 
                     <div class="delete-btn-box">
-                        <button class="delete-btn">-</button>
+                        <button class="delete-btn"><i class="fa-solid fa-x"></i></button>
                     </div>
                 </div>
                 <div class="order">
@@ -290,7 +289,7 @@
                     </div>
 
                     <div class="delete-btn-box">
-                        <button class="delete-btn">-</button>
+                        <button class="delete-btn"><i class="fa-solid fa-x"></i></button>
                     </div>
                 </div>
                 <div class="order">
@@ -303,20 +302,21 @@
                     </div>
 
                     <div class="delete-btn-box">
-                        <button class="delete-btn">-</button>
+                        <button class="delete-btn"><i class="fa-solid fa-x"></i></button>
                     </div>
-                </div>
+                </div> -->
 
             </div>
             <div class="count">
                 <div class="end-price-text">Łączna kwota zamówenia:</div>
-                <div class="end-price">100 zł</div>
+                <div class="end-price"></div>
             </div>
 
             <div class="order-btn-box">
                 <div class="order-btn"><button class="order-btn-confirm">Zamawiam</button></div>
             </div>
         </div>
+        <span class="orders-confirm">Zrealizujemy twoje zamówienie w ciągu 60 minut</span>
     </section>
 
     <section id="contact">
@@ -340,7 +340,9 @@
         <span>Rezerwacje : 888-888-888</span>
     </div>
 </div>
-<footer class="footer">Lenka &copy; <span class="year"> 2022</span></footer>
+<div class="footer-box">
+    <footer class="footer">U Lenki &copy; <span class="year"></span></footer>
+</div>
     </section>
 
 

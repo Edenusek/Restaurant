@@ -329,7 +329,7 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     font-size: 1rem;
-    color: #a8eb12;
+    color: #ff1d58;
   }
   .reservation-info {
     display: -webkit-box;
@@ -353,18 +353,27 @@ body {
   .reserv-info-date,
 .reserv-info-time {
     padding: 3px 0;
-    color: #f0ffff;
+    color: #171717;
     font-size: 1rem;
   }
   .requirements {
     width: 100vw;
-    height: 3.125rem;
-    padding-top: 4.375rem;
-    margin-left: 1.25rem;
+    padding-top: 40px;
     font-size: 1rem;
   }
+  .phone-number {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   #orders {
-    background-color: #79c2d0;
+    background-color: #edf756;
+  }
+  #orders-menu {
+    font-size: 1rem;
   }
   .orders-tittle {
     display: -webkit-box;
@@ -376,17 +385,19 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 20px;
+    padding-top: 50px;
     font-size: 2rem;
+  }
+  #orders-menu {
+    border-radius: 5px;
   }
   .orders {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     max-width: 90%;
     padding: 10px;
     margin: 0 auto;
@@ -398,7 +409,7 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    color: tomato;
+    color: #ff1d58;
     font-size: 1rem;
   }
   .orders-btn {
@@ -412,7 +423,7 @@ body {
   }
   .orders-add-btn {
     background-color: transparent;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
   }
@@ -433,22 +444,21 @@ body {
     padding: 10px;
     padding-top: 40px;
     width: 100vw;
-    height: 55vh;
+    min-height: 55vh;
+    max-height: 80%;
   }
   .basket {
     min-width: 90%;
     min-height: 30%;
     max-height: 90%;
-    background-color: #9fd3c7;
-    -webkit-box-shadow: 5px 7px 5px #53a8b6;
-            box-shadow: 5px 7px 5px #53a8b6;
-    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 8px;
   }
   .order {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-top: 10px;
+    margin: 10px 0;
     width: 100%;
     height: 30px;
   }
@@ -493,8 +503,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 20px;
-    height: 20px;
+    width: 25px;
     border-radius: 5px;
     background-color: transparent;
     border: 1px solid black;
@@ -503,11 +512,15 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 10%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 50px;
     width: 90%;
-    background-color: #9fd3c7;
-    -webkit-box-shadow: 5px 7px 5px #53a8b6;
-            box-shadow: 5px 7px 5px #53a8b6;
+    padding-top: 20px;
   }
   .end-price-text,
 .end-price {
@@ -520,9 +533,20 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-size: 0.8rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 1rem;
   }
   .end-price-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 70%;
     height: 100%;
   }
@@ -539,9 +563,6 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 100vh;
     padding-top: 30px;
   }
@@ -550,6 +571,19 @@ body {
     border: 1px solid black;
     padding: 5px;
     background-color: transparent;
+    font-size: 1rem;
+  }
+  .orders-confirm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 10px;
     font-size: 1rem;
   }
   #contact {
@@ -571,8 +605,8 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
-    height: 80%;
+    width: 100vw;
+    height: 85vh;
   }
   .contact-tittle {
     display: -webkit-box;
@@ -581,7 +615,7 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding: 10px;
+    padding-top: 40px;
     font-size: 2rem;
     color: #ffffff;
   }
@@ -607,7 +641,7 @@ body {
     background-color: #ececec;
     opacity: 0.8;
   }
-  .footer {
+  .footer-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -617,10 +651,16 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-size: 1.2rem;
-    width: 100%;
-    height: 11%;
+    width: 100vw;
+    min-height: 30px;
+    max-height: 40px;
+    margin-top: 25px;
     background-color: #171717;
+    overflow: hidden;
+  }
+  .footer {
+    background-color: #171717;
+    font-size: 1.2rem;
     color: #ffffff;
   }
 }/*# sourceMappingURL=style.css.map */
