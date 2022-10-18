@@ -1,7 +1,7 @@
 const mobilNav = document.querySelector(".bars");
-const menu = document.querySelector(".menu");
+const menu = document.querySelector(".nav-menu");
 const bars = document.querySelectorAll(".bars");
-const menuClick = document.querySelectorAll(".menu__item");
+const menuClick = document.querySelectorAll(".nav-menu__item");
 const btnLeft = document.querySelector(".btn-left");
 const btnRight = document.querySelector(".btn-right");
 const leftArrow = document.querySelector(".left-arrow");
@@ -14,10 +14,15 @@ const reservationBtn = document.querySelector(".reservation-btn");
 const ordersAddBtn = document.querySelector(".orders-add-btn");
 const orderBtnConfirm = document.querySelector(".order-btn-confirm");
 const ordersPrice = document.querySelector(".orders-price");
+const ordersConfirmInfo = document.querySelector(".orders-confirm");
 
 const inputOrder = document.getElementById("orders-menu");
+const basket = document.querySelector(".basket");
 const ordersError = document.querySelector(".orders-selects-error");
 const endPrice = document.querySelector(".end-price");
+const btnDeleteAll = document.querySelector(".delete-all");
+
+endPrice.textContent = "0 zł";
 
 let ID = 0;
 
@@ -108,57 +113,44 @@ const reservationTime = () => {
 	console.log(actualTime);
 };
 
-const order = () => {
-	ordersAddBtn.style.backgroundColor = "black";
-	ordersAddBtn.style.color = "white";
-};
-
-const confirmOrders = () => {
-	orderBtnConfirm.style.backgroundColor = "black";
-	orderBtnConfirm.style.color = "white";
-};
-
 const footerDate = () => {
 	const footerYear = document.querySelector(".year");
 	const date = new Date();
 	footerYear.textContent = date.getFullYear();
 };
 
-const checkOrdersError = () => {
-	if (inputOrder.selectedIndex === 0) {
-		ordersError.textContent = "Musisz wybrać zamówenie";
-	}
-};
-
 const addToBasked = () => {
-	const ordersName = document.querySelector(".orders-name");
-	const ordersPrice = document.querySelector(".orders-price");
-	const basket = document.querySelector(".basket");
 	const newOrder = document.createElement("div");
 	newOrder.setAttribute("id", ID);
-const number = parseFloat(inputOrder.value)
-	console.log(number);
 
-	checkOrdersError();
+	const text = inputOrder.options[inputOrder.selectedIndex].text;
+	const textArr = text.split(" ");
+	const dishPrice = parseFloat(textArr.slice(-2));
 
-	newOrder.innerHTML = `
-	<div class="order">
-                    <div class="dish">
-                        <span>${inputOrder.value}</span>
-                    </div>
-
-                    <div class="price">
-                        <span>${parseFloat(inputOrder.value)}</span>
-                    </div>
-
-                    <div class="delete-btn-box">
-                        <button class="delete-btn" onclick="deleteDish(${ID})"><i class="fa-solid fa-x"></i></button>
-                    </div>
-                </div>
-	`;
+	if (inputOrder.selectedIndex != 0) {
+		newOrder.innerHTML = `
+		<div class="order">
+						<div class="dish">
+							<span>${inputOrder.value}</span>
+						</div>
+	
+						<div class="price">
+							<span>${dishPrice} zł</span>
+						</div>
+	
+						<div class="delete-btn-box">
+							<button class="delete-btn" onclick="deleteDish(${ID})"><i class="fa-solid fa-x"></i></button>
+						</div>
+					</div>
+		`;
+		ordersError.textContent = "";
+	} else {
+		ordersError.textContent = "Musisz wybrać zamówenie";
+		return;
+	}
 
 	basket.appendChild(newOrder);
-	moneyArr.push(parseFloat(inputOrder.value));
+	moneyArr.push(parseFloat(dishPrice));
 	count(moneyArr);
 
 	ID++;
@@ -166,17 +158,51 @@ const number = parseFloat(inputOrder.value)
 
 const count = money => {
 	const newMoney = money.reduce((a, b) => a + b);
-	endPrice.textContent = `${newMoney} zł`;
+	endPrice.textContent = `${parseFloat(newMoney)} zł`;
 };
 
-const deleteDish = () => {};
+const deleteDish = id => {
+	const deleteOrder = document.getElementById(id);
+	const ordersAmount = parseFloat(deleteOrder.childNodes[3]);
+
+	const indexOfOrder = moneyArr.indexOf(ordersAmount);
+	console.log(deleteOrder);
+	moneyArr.splice(indexOfOrder, 1);
+	basket.removeChild(deleteOrder);
+
+	count(moneyArr);
+};
+
+const confirmOrder = () => {
+	
+
+	if (basket.innerHTML != "" && inputOrder.selectedIndex != 0) {
+		ordersConfirmInfo.textContent =
+			"Zrealizujemy twoje zamówienie w ciągu 60 minut";
+		endPrice.textContent = "0 zł";
+		inputOrder.selectedIndex = 0;
+		basket.innerHTML = "";
+	} else {
+		ordersError.textContent = "Musisz wybrać zamówenie";
+		ordersConfirmInfo.textContent = "";
+	}
+};
+
+const deleteAllOdrers = () => {
+	endPrice.textContent = "0 zł";
+	inputOrder.selectedIndex = 0;
+	basket.innerHTML = "";
+	ordersConfirmInfo.textContent = "";
+	ordersError.textContent = "";
+};
 
 mobilNav.addEventListener("click", showMobileMenu);
 btnRight.addEventListener("click", handleRightArrow);
 btnLeft.addEventListener("click", handleLeftArrow);
 reservationBtn.addEventListener("click", reservation);
 ordersAddBtn.addEventListener("click", addToBasked);
-orderBtnConfirm.addEventListener("click", confirmOrders);
+orderBtnConfirm.addEventListener("click", confirmOrder);
+btnDeleteAll.addEventListener("click", deleteAllOdrers);
 
 hideMobileMenu();
 disabledPastDate();

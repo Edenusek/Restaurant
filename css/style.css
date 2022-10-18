@@ -5,13 +5,16 @@
   margin: 0;
 }
 
-body {
+html {
   font-size: 62.5%;
   font-family: "Tiro Devanagari Sanskrit", serif;
 }
 
-@media (max-width: 460px) {
-  .navi {
+@media (min-width: 150px) {
+  .desktop-navi {
+    display: none;
+  }
+  .habmurger-navi {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -31,32 +34,38 @@ body {
   .name {
     padding-right: 20px;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.8rem;
   }
-  .tittle {
-    position: relative;
-    width: 100px;
-    height: 20px;
-    top: 80px;
-    left: 150px;
-    font-size: 3em;
-    color: #fcffc1;
+  .title-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100vw;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 2.2rem;
   }
-  .tittle .tittle__two {
-    position: absolute;
-    left: 40px;
+  .tittle-one,
+.tittle-two,
+.tittle-three {
+    color: #42b883;
   }
-  .tittle .tittle__three {
-    position: absolute;
-    left: 60px;
-  }
-  .hi-board {
-    position: relative;
-    top: 250px;
-    left: 70px;
-    font-size: 2em;
-    font-weight: bold;
-    color: #fcffc1;
+  .mobil-nav-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .mobil-nav {
     padding: 10px;
@@ -109,10 +118,10 @@ body {
   .line-three {
     top: 20px;
   }
-  .menu {
+  .nav-menu {
     position: fixed;
     width: 250px;
-    height: 700px;
+    height: 100vh;
     background-color: #ffffff;
     overflow: hidden;
     position: absolute;
@@ -123,13 +132,13 @@ body {
     transition: transform 0.3s;
     transition: transform 0.3s, -webkit-transform 0.3s;
   }
-  .menu .menu__list {
+  .nav-menu .nav-menu__list {
     margin-top: 20px;
   }
-  .menu .menu__list .menu__item {
+  .nav-menu .nav-menu__list .nav-menu__item {
     padding: 10px 30px;
   }
-  .menu .menu__list .menu__item a {
+  .nav-menu .nav-menu__list .nav-menu__item a {
     list-style: none;
     text-decoration: none;
     text-transform: uppercase;
@@ -152,48 +161,46 @@ body {
 #reservation,
 #orders,
 #contact {
-    max-width: 460px;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   #home {
     background-image: url("/img/restaurant-small.jpg");
-    background-position: center;
-    background-size: 100vw 100vh;
-    background-repeat: no-repeat;
+  }
+  #menus {
+    background-image: url("/img/pizza-small.jpg");
   }
   .menus-site {
+    width: 100vw;
+    height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
-    height: 100%;
-    background-image: url("/img/pizza-small.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
   }
   .menus-tittle {
     margin-top: 10px;
-    font-size: 2rem;
-    letter-spacing: 5px;
+    font-size: 4rem;
     color: #ffffff;
-  }
-  .slider {
-    position: relative;
-    width: 250px;
-    height: 400px;
-    border-radius: 8px;
   }
   .slider-box {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
   .cart {
     display: none;
@@ -209,10 +216,11 @@ body {
             justify-content: space-evenly;
     padding-top: 10px;
     width: 250px;
-    height: 400px;
+    height: 300px;
     opacity: 0.8;
     background-color: #ffffff;
     border-radius: 8px;
+    font-size: 1.5rem;
   }
   .active {
     display: block;
@@ -237,7 +245,7 @@ body {
     left: 0px;
   }
   .btn-right {
-    right: 0;
+    right: 0px;
   }
   .btn-menu span {
     -webkit-transition: background-color 0.3s;
@@ -245,6 +253,8 @@ body {
   }
   #reservation {
     background-color: #fcffc1;
+    width: 100%;
+    min-height: 100vh;
   }
   .reservation-tittle {
     display: -webkit-box;
@@ -256,8 +266,8 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 50px;
-    font-size: 2rem;
+    padding-top: 100px;
+    font-size: 3rem;
   }
   .form {
     display: -webkit-box;
@@ -270,11 +280,12 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding-top: 80px;
+    padding-top: 20px;
   }
   #date,
 #persons,
-#time {
+#time,
+#orders-menu {
     border-radius: 5px;
     border: 1px solid black;
   }
@@ -300,6 +311,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     padding-right: 5px;
+    font-size: 1.5rem;
   }
   .reserv-btn {
     display: -webkit-box;
@@ -311,15 +323,27 @@ body {
     padding: 20px;
   }
   .reservation-btn {
-    font-size: 1rem;
+    font-size: 1.5rem;
     border: 1px solid black;
     border-radius: 5px;
-    padding: 2px;
+    padding: 5px;
     background-color: transparent;
   }
-  .reservation-btn:focus {
+  .reservation-btn:focus,
+.orders-add-btn:focus,
+.order-btn-confirm:focus,
+.delete-all:focus {
     color: #ffffff;
     background-color: #171717;
+  }
+  .all-btns {
+    -webkit-transition: color 0.3s, background-color 0.3s;
+    transition: color 0.3s, background-color 0.3s;
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.5rem;
   }
   .reservation-error {
     display: -webkit-box;
@@ -328,7 +352,7 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    font-size: 1rem;
+    font-size: 2rem;
     color: #ff1d58;
   }
   .reservation-info {
@@ -354,26 +378,31 @@ body {
 .reserv-info-time {
     padding: 3px 0;
     color: #171717;
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
-  .requirements {
-    width: 100vw;
-    padding-top: 40px;
-    font-size: 1rem;
-  }
-  .phone-number {
+  .reservation-confirm {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100vw;
+    padding-top: 40px;
+    font-size: 1.6rem;
+    padding-left: 30px;
   }
   #orders {
     background-color: #edf756;
-  }
-  #orders-menu {
-    font-size: 1rem;
+    width: 100%;
+    min-height: 100vh;
   }
   .orders-tittle {
     display: -webkit-box;
@@ -386,10 +415,11 @@ body {
         -ms-flex-align: center;
             align-items: center;
     padding-top: 50px;
-    font-size: 2rem;
+    font-size: 4rem;
   }
   #orders-menu {
     border-radius: 5px;
+    font-size: 1.5rem;
   }
   .orders {
     display: -webkit-box;
@@ -410,7 +440,7 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     color: #ff1d58;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .orders-btn {
     display: -webkit-box;
@@ -420,12 +450,6 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     padding-top: 5px;
-  }
-  .orders-add-btn {
-    background-color: transparent;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
   }
   .basket-box {
     display: -webkit-box;
@@ -448,9 +472,11 @@ body {
     max-height: 80%;
   }
   .basket {
-    min-width: 90%;
-    min-height: 30%;
-    max-height: 90%;
+    width: 90%;
+    min-height: 100px;
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
     border: 1px solid black;
     border-radius: 8px;
   }
@@ -479,7 +505,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     padding-top: 5px;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
   }
   .dish {
     width: 50%;
@@ -490,8 +516,17 @@ body {
     height: 100%;
   }
   .delete-btn-box {
-    width: 15%;
-    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 25px;
+    height: 25px;
   }
   .delete-btn {
     display: -webkit-box;
@@ -504,6 +539,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     width: 25px;
+    height: 25px;
     border-radius: 5px;
     background-color: transparent;
     border: 1px solid black;
@@ -535,7 +571,7 @@ body {
             align-items: center;
     border: 1px solid black;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .end-price-text {
     display: -webkit-box;
@@ -554,43 +590,29 @@ body {
     width: 30%;
     height: 100%;
     color: royalblue;
-    font-size: 1rem;
   }
   .order-btn-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 100vh;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    max-width: 100vh;
     padding-top: 30px;
   }
-  .order-btn-confirm {
-    border-radius: 5px;
-    border: 1px solid black;
-    padding: 5px;
-    background-color: transparent;
-    font-size: 1rem;
+  .order-btn-confirm,
+.delete-all {
+    margin: 5px;
   }
   .orders-confirm {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    padding-left: 20px;
     padding-top: 10px;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   #contact {
-    background-image: url(/img/cafe-small.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: url("/img/cafe-small.jpg");
     background-size: cover;
+    min-height: 100vh;
   }
   .contact-box {
     display: -webkit-box;
@@ -600,23 +622,16 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: space;
+        -ms-flex-pack: space;
+            justify-content: space;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     width: 100vw;
-    height: 85vh;
+    height: 75%;
   }
   .contact-tittle {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding-top: 40px;
-    font-size: 2rem;
     color: #ffffff;
   }
   .contact1,
@@ -629,19 +644,33 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 20px;
-    gap: 5px;
-    width: 70%;
-    height: 30%;
-    font-size: 1rem;
+    padding: 5px;
+    margin: 10px 0;
+    width: 65%;
+    height: 25%;
+    font-size: 1.5rem;
     border-radius: 8px;
     background-color: #ececec;
     opacity: 0.8;
   }
   .footer-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    width: 100vw;
+    height: 30px;
+    background-color: transparent;
+  }
+  .footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -652,15 +681,227 @@ body {
         -ms-flex-align: center;
             align-items: center;
     width: 100vw;
-    min-height: 30px;
-    max-height: 40px;
-    margin-top: 25px;
+    height: 30px;
     background-color: #171717;
-    overflow: hidden;
+    font-size: 1.8rem;
+    color: #ffffff;
+  }
+  .all-titlles {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 40px;
+    font-size: 4rem;
+  }
+}
+@media (min-width: 375px) {
+  .first-cart,
+.second-cart,
+.third-cart {
+    width: 300px;
+    height: 450px;
+  }
+  .footer-box,
+.footer {
+    height: 35px;
+  }
+}
+@media (min-width: 390px) {
+  .slider {
+    width: 300px;
+    height: 450px;
+  }
+  .first-cart,
+.second-cart,
+.third-cart {
+    width: 300px;
+    height: 450px;
+  }
+  .btn-menu {
+    font-size: 3rem;
+  }
+  .footer-box,
+.footer {
+    height: 45px;
+  }
+}
+@media (min-width: 568px) {
+  .title-box {
+    font-size: 3rem;
+  }
+  .all-titlles {
+    font-size: 5rem;
+  }
+  .end-price,
+.end-price-text {
+    font-size: 2rem;
+  }
+  .contact1,
+.contact2,
+.contact3 {
+    font-size: 2.2rem;
+  }
+  .reserv-label {
+    font-size: 2rem;
+  }
+  .reservation-confirm-info {
+    font-size: 2rem;
+  }
+  .all-btns {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 800px) {
+  .habmurger-navi {
+    display: none;
+  }
+  .desktop-navi {
+    width: 100vw;
+    height: 30px;
+    background-color: #fff;
+    z-index: 100;
+  }
+  .desktop-navi-list {
+    width: 100vw;
+    height: 40px;
+    background-color: #fff;
+  }
+  #home {
+    background-image: url("/img/restaurant-big.jpg");
+  }
+  #menus {
+    background-image: url("/img/pizza-big.jpg");
+  }
+  #contact {
+    background-image: url("/img/cafe-big.jpg");
+  }
+  .name {
+    font-size: 2.2rem;
+  }
+  .title-box {
+    font-size: 4rem;
+  }
+  .slider {
+    width: 400px;
+    height: 450px;
+  }
+  .first-cart,
+.second-cart,
+.third-cart {
+    width: 400px;
+    height: 450px;
+  }
+  #orders-menu {
+    font-size: 2rem;
+  }
+  .orders-selects-error {
+    font-size: 2rem;
+  }
+  .orders-confirm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 2rem;
+  }
+  .basket {
+    width: 90%;
+    min-height: 200px;
+    max-height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid black;
+    border-radius: 8px;
+  }
+  .dish,
+.price,
+.delete-btn-box,
+.end-price-text,
+.end-price {
+    font-size: 2.2rem;
+  }
+  .contact1,
+.contact2,
+.contact3 {
+    font-size: 3rem;
+  }
+  .footer-box {
+    position: relative;
+    height: 60px;
+    width: 100vw;
   }
   .footer {
-    background-color: #171717;
-    font-size: 1.2rem;
-    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1000px) {
+  #orders,
+#reservation,
+#contact {
+    height: 100vh;
+  }
+  .first-cart,
+.second-cart,
+.third-cart {
+    height: 450px;
+  }
+  .orders-tittle {
+    padding-top: 35px;
+  }
+  .contact-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 74%;
+  }
+  .contact1,
+.contact2,
+.contact3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 5px;
+    margin: 10px 0;
+    width: 20%;
+    height: 40%;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    background-color: #ececec;
+    opacity: 0.8;
+  }
+  .footer-box {
+    top: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 100;
   }
 }/*# sourceMappingURL=style.css.map */

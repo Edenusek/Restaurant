@@ -17,17 +17,19 @@
 
 <body>
     <section id="home" class="home">
-        <h1 class="tittle">
-            <span class="tittle__one">Restauracja</span>
-            <span class="tittle__two">U</span><br>
-            <span class="tittle__three">Lenki</span>
-        </h1>
-        <span class="hi-board">
-            <span>zapraszamy na pyszne jedzenie </span>
+       <div class="title-box">
+        <!-- <h1 class="tittle"> -->
+            <h1 class="tittle-one">Restauracja</h1>
+            <h1 class="tittle-two">U</h1>
+            <h1 class="tittle-three">Lenki</h1>
+            <!-- <span class="hi-board">
+                <span>zapraszamy na pyszne jedzenie </span>
+    
+            </span> -->
+        <!-- </h1> -->
+       </div>
 
-        </span>
-
-        <section class="navi">
+        <section class="habmurger-navi">
             <button class="mobil-nav">
                 <span class="bars">
                     <span class="line-one"></span>
@@ -35,26 +37,36 @@
                     <span class="line-three"></span>
                 </span>
             </button>
-            <span class="name">U Lenki</span> 
-            
-            <div class="menu hide">
-                <ul class="menu__list">
-                    <li class="menu__item"><a href="#home">Home</a></li>
-                    <li class="menu__item"><a href="#menus">Menu</a></li>
-                    <li class="menu__item"><a href="#reservation">rezerwacja</a></li>
-                    <li class="menu__item"><a href="#orders">zamówienia</a></li>
-                    <li class="menu__item"><a href="#contact">kontakt</a></li>
+            <span class="name">U Lenki</span>
+
+            <div class="nav-menu hide">
+                <ul class="nav-menu__list">
+                    <li class="nav-menu__item"><a href="#home">Home</a></li>
+                    <li class="nav-menu__item"><a href="#menus">Menu</a></li>
+                    <li class="nav-menu__item"><a href="#reservation">rezerwacja</a></li>
+                    <li class="nav-menu__item"><a href="#orders">zamówienia</a></li>
+                    <li class="nav-menu__item"><a href="#contact">kontakt</a></li>
                 </ul>
             </div>
 
 
         </section>
+
+        <section class="desktop-navi">
+            <ul class="desktop-navi-list">
+                <li class="desktop-navi-item"><a href="#home">Home</a></li>
+                <li class="desktop-navi-item"><a href="#menus">Menu</a></li>
+                <li class="desktop-navi-item"><a href="#reservation">rezerwacja</a></li>
+                <li class="desktop-navi-item"><a href="#orders">zamówienia</a></li>
+                <li class="desktop-navi-item"><a href="#contact">kontakt</a></li>
+            </ul>
+        </section>
     </section>
     <section id="menus" class="menus">
         <div class="menus-site">
+            <h1 class="menus-tittle all-titlles">Menu</h1>
 
             <div class="slider">
-                <h1 class="menus-tittle">Menu</h1>
                 <div class="slider-box">
                     <div class="cart active">
                         <div class="first-cart  ">
@@ -160,7 +172,7 @@
                                     <th>23 zł</th>
                                 </tbody>
                                 <tbody>
-                                    <th>Truskawki w koglu moglu</th>
+                                    <th>Truskawki w śmietanie</th>
                                     <th>23 zł</th>
                                 </tbody>
                                 <tbody>
@@ -195,12 +207,12 @@
 
     <section id="reservation">
         <div class="reservation">
-            <h1 class="reservation-tittle">Rezerwacja</h1>
+            <h1 class="reservation-tittle all-titlles">Rezerwacja</h1>
             <div class="form">
                 <div class="date">
                     <label for="" class="reserv-label">Data:</label>
                     <input name="date" type="date" id="date" min="">
-                    <input name="time "type="time" id="time" min="">
+                    <input name="time " type="time" id="time" min="">
                 </div>
                 <div class="persons">
                     <label for="" class="reserv-label">Ilość osób:</label>
@@ -217,50 +229,62 @@
 
             <span class="reservation-error"></span>
             <div class="reserv-btn">
-                <button class="reservation-btn">Zarezerwuj</button>
+                <button class="reservation-btn all-btns">Zarezerwuj</button>
             </div>
             <div class="reservation-info">
                 <span class="reserv-info-date"></span>
                 <span class="reserv-info-time"></span>
             </div>
-            <div class="requirements">
-                <span>Rezerwacji można dokonać minimun 2 godziny wcześniej. Przyjmujemy rezerwację
-                    również pod numerem telefonu </span>
-                    <span class="phone-number">888-888-888</span>
+            <div class="reservation-confirm">
+                <span class="reservation-confirm-info">Przyjmujemy rezerwację
+                    również pod numerem telefonu: 888-888-888</span>
+                <!-- <span class="reservation-confirm-info-phone">888-888-888</span> -->
             </div>
         </div>
     </section>
 
     <section id="orders">
-        <span class="orders-tittle">Zamówienia</span>
+        <span class="orders-tittle all-titlles">Zamówienia</span>
         <div class="orders">
             <select name="orders-menu" id="orders-menu">
                 <option value="" selected disabled>Wybierz danie</option>
-                <option value="" disabled>Pizza</option>
-                <option value='Margherita 32 zł'><span class="orders-name">Margherita</span> <span class="orders-price">32 zł</span></option>
-                <option value="Funghi 32 zł"><span class="orders-name">Funghi</span>  <span class="orders-price">32 zł</option>
-                <option value="Vegetariana 32 zł"><span class="orders-name">Vegetariana</span>  <span class="orders-price">32 zł</option>
-                <option value="Hawaii 32 zł"><span class="orders-name">Hawaii</span>  <span class="orders-price">32 zł</option>
-                <option value="Bolognese 32 zł"><span class="orders-name">Bolognese</span>  <span class="orders-price">32 zł</option>
-                <option value="" disabled>Makarony</option>
-                <option value="Spaghetti bolognese 32 zł"><span class="orders-name">Spaghetti bolognese</span>  <span class="orders-price">32 zł</option>
-                <option value="Spaghetti carbonara 32 zł"><span class="orders-name">Spaghetti carbonara</span>  <span class="orders-price">32 zł</option>
-                <option value="Cannelloni spinaci 32 zł"><span class="orders-name">Cannelloni spinaci</span>  <span class="orders-price">32 zł</option>
-                <option value="Lasagne alla bolognese 32 zł"><span class="orders-name">Lasagne alla bolognese</span>  <span class="orders-price">32 zł</option>
-                <option value="Penne all forno 32 zł"><span class="orders-name">Penne all forno</span>  <span class="orders-price">32 zł</option>
-                <option value="" disabled>Desery</option>
-                <option value="Beza migdałowa 32 zł"><span class="orders-name">Beza migdałowa</span>  <span class="orders-price">32 zł</option>
-                <option value="Sernik 32 zł"><span class="orders-name">Sernik</span>  <span class="orders-price">32 zł</option>
-                <option value="Truskawki w koglu moglu 32 zł"><span class="orders-name">Truskawki w koglu moglu</span>  <span class="orders-price">32 zł</option>
-                <option value="Jabłecznik"><span class="orders-name">Jabłecznik </span> <span class="orders-price">32 zł</option>
-                <option value="Lody"><span class="orders-name">Lody</span>  <span class="orders-price">32 zł</option>
+                <optgroup label="Pizza"></optgroup>
+                <option value='Margherita'>Margherita 22 zł</span></option>
+                <option value="Funghi"><span class="orders-name">Funghi</span> <span class="orders-price">24 zł</option>
+                <option value="Vegetariana "><span class="orders-name">Vegetariana</span> <span class="orders-price">25
+                        zł</option>
+                <option value="Hawaii"><span class="orders-name">Hawaii</span> <span class="orders-price">28 zł</option>
+                <option value="Bolognese"><span class="orders-name">Bolognese</span> <span class="orders-price">32 zł
+                </option>
+                <optgroup label="Makarony"></optgroup>
+
+                <option value="Spaghetti bolognese"><span class="orders-name">Spaghetti bolognese</span> <span
+                        class="orders-price">28 zł</option>
+                <option value="Spaghetti carbonara "><span class="orders-name">Spaghetti carbonara</span> <span
+                        class="orders-price">28 zł</option>
+                <option value="Cannelloni spinaci "><span class="orders-name">Cannelloni spinaci</span> <span
+                        class="orders-price">30 zł</option>
+                <option value="Lasagne alla bolognese"><span class="orders-name">Lasagne alla bolognese</span> <span
+                        class="orders-price">25 zł</option>
+                <option value="Penne all forno"><span class="orders-name">Penne all forno</span> <span
+                        class="orders-price">31 zł</option>
+                <optgroup label="Desery"></optgroup>
+
+                <option value="Beza migdałowa"><span class="orders-name">Beza migdałowa</span> <span
+                        class="orders-price">10 zł</option>
+                <option value="Sernik"><span class="orders-name">Sernik</span> <span class="orders-price">15 zł</option>
+                <option value="Truskawki w śmietanie"><span class="orders-name">Truskawki w śmietanie</span> <span
+                        class="orders-price">15 zł</option>
+                <option value="Jabłecznik"><span class="orders-name">Jabłecznik </span> <span class="orders-price">16 zł
+                </option>
+                <option value="Lody"><span class="orders-name">Lody</span> <span class="orders-price">12 zł</option>
             </select>
-           
+
 
         </div>
         <div class="orders-selects-error"></div>
         <div class="orders-btn">
-            <button class="orders-add-btn">Dodaj</button>
+            <button class="orders-add-btn all-btns">Dodaj</button>
         </div>
 
         <div class="basket-box">
@@ -313,36 +337,38 @@
             </div>
 
             <div class="order-btn-box">
-                <div class="order-btn"><button class="order-btn-confirm">Zamawiam</button></div>
+                <div class="order-btn"><button class="order-btn-confirm all-btns">Zamawiam</button></div>
+                <button class="delete-all all-btns">Usuń wszystko</button>
             </div>
         </div>
-        <span class="orders-confirm">Zrealizujemy twoje zamówienie w ciągu 60 minut</span>
+        <span class="orders-confirm"></span>
+        
     </section>
 
     <section id="contact">
-        <h1 class="contact-tittle">Kontakt</h1>
+        <h1 class="contact-tittle all-titlles">Kontakt</h1>
         <div class="contact-box">
-    <div class="contact1">
-        <span><i class="fa-solid fa-building"></i></span>
-        <span>Rynek</span>
-        <span>100</span>
-        <span>41-902</span>
-        <span>Bytom</span>
-    </div>
-    <div class="contact2">
-        <span><i class="fa-solid fa-envelope"></i></span>
-        <span>Lenka@restauracja.com</span>
-        <span>Rezerwacja@restauracja.com</span>
-    </div>
-    <div class="contact3">
-        <span><i class="fa-solid fa-phone"></i></span>
-        <span>U Lenki : 777-777-777</span>
-        <span>Rezerwacje : 888-888-888</span>
-    </div>
-</div>
-<div class="footer-box">
-    <footer class="footer">U Lenki &copy; <span class="year"></span></footer>
-</div>
+            <div class="contact1">
+                <span><i class="fa-solid fa-building"></i></span>
+                <span>Rynek</span>
+                <span>100</span>
+                <span>41-902</span>
+                <span>Bytom</span>
+            </div>
+            <div class="contact2">
+                <span><i class="fa-solid fa-envelope"></i></span>
+                <span>Lenka@restauracja.com</span>
+                <span>Rezerwacja@restauracja.com</span>
+            </div>
+            <div class="contact3">
+                <span><i class="fa-solid fa-phone"></i></span>
+                <span>U Lenki : 777-777-777</span>
+                <span>Rezerwacje : 888-888-888</span>
+            </div>
+        </div>
+        <div class="footer-box">
+            <footer class="footer">U Lenki &copy; <span class="year"></span></footer>
+        </div>
     </section>
 
 
